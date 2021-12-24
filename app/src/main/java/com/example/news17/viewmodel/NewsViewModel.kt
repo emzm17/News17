@@ -10,7 +10,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class NewsViewModel: ViewModel() {
-     val newsLiveData=MutableLiveData<NewsResponse>()
+     private val newsLiveData=MutableLiveData<NewsResponse>()
      val news:LiveData<NewsResponse>
      get()=newsLiveData
 
@@ -22,4 +22,55 @@ class NewsViewModel: ViewModel() {
               }
           }
      }
+    fun getBusiness(){
+        GlobalScope.launch (Dispatchers.IO){
+            val result=NewsRepository.getBusiness()
+            if(result.isSuccessful){
+
+                newsLiveData.postValue(result.body())
+            }
+        }
+    }
+    fun getSport(){
+        GlobalScope.launch (Dispatchers.IO){
+            val result=NewsRepository.getSport()
+            if(result.isSuccessful){
+                newsLiveData.postValue(result.body())
+            }
+        }
+    }
+    fun getTech(){
+        GlobalScope.launch (Dispatchers.IO){
+            val result=NewsRepository.getTechnology()
+            if(result.isSuccessful){
+                newsLiveData.postValue(result.body())
+            }
+        }
+    }
+    fun getScience(){
+        GlobalScope.launch (Dispatchers.IO){
+            val result=NewsRepository.getScience()
+            if(result.isSuccessful){
+                newsLiveData.postValue(result.body())
+            }
+        }
+    }
+    fun getHealth(){
+        GlobalScope.launch (Dispatchers.IO){
+            val result=NewsRepository.getMedical()
+            if(result.isSuccessful){
+                newsLiveData.postValue(result.body())
+            }
+        }
+    }
+    fun getEntertainment(){
+        GlobalScope.launch (Dispatchers.IO){
+            val result=NewsRepository.getEntertainment()
+            if(result.isSuccessful){
+                newsLiveData.postValue(result.body())
+            }
+        }
+    }
+
+
 }

@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id  'kotlin-android-extensions'
 }
 
 android {
@@ -21,6 +22,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    buildFeatures{
+        viewBinding true
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -57,5 +61,10 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata:$lifecycle_version")
     // Lifecycles only (without ViewModel or LiveData)
     implementation("androidx.lifecycle:lifecycle-runtime:$lifecycle_version")
+
+    implementation ('androidx.cardview:cardview:1.0.0')
+    implementation 'com.mikhaellopez:circularimageview:4.3.0'
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
 }
