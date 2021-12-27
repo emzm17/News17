@@ -11,47 +11,68 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <TextView
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:text="News Feed"
-        android:fontFamily="@font/pacifico"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_scrollFlags="enterAlways|scroll"
+            android:background="@color/indigo_800"
+            app:title=" ">
+
+            <TextView
+                android:textColor="@color/black"
+                android:id="@+id/title_toolbar"
+                android:text="News Feed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/pacifico"
+                android:gravity="center"
+                android:textSize="24sp"
+                />
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:rowCount="4"
-        android:columnCount="2"
         android:layout_gravity="center_horizontal"
-        android:layout_margin="5dp"
-        android:columnOrderPreserved="false">
+        android:layout_margin="10dp"
+        android:columnCount="2"
+        android:columnOrderPreserved="false"
+        android:rowCount="4">
 
         <androidx.cardview.widget.CardView
-            android:foreground="@drawable/effect"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_margin="10dp"
+            android:layout_marginLeft="10dp"
             android:clickable="true"
+            android:contextClickable="true"
             android:focusable="true"
-            android:layout_height="150dp"
-            android:layout_width="150dp"
+            android:foreground="@drawable/effect"
             app:cardCornerRadius="15dp"
-            app:cardElevation="5dp"
-            android:layout_marginLeft="20dp"
-            android:layout_margin="10dp">
+            app:cardElevation="5dp">
+
             <RelativeLayout
                 android:id="@+id/top_feed_id"
-                android:background="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/white"
                 android:gravity="center">
 
-                <ImageButton
-
+                <ImageView
                     android:id="@+id/top"
                     android:layout_width="60dp"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white"
+                    android:layout_height="60dp"
                     android:src="@drawable/top" />
 
                 <TextView
@@ -64,18 +85,20 @@
             </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
-            android:layout_height="150dp"
-            android:layout_width="150dp"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_margin="10dp"
+            android:layout_marginLeft="15dp"
             app:cardCornerRadius="15dp"
-            app:cardElevation="5dp"
-            android:layout_marginLeft="45dp"
-            android:layout_margin="10dp">
+            app:cardElevation="5dp">
+
             <RelativeLayout
-                android:background="@color/white"
                 android:id="@+id/bussines_id"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/white"
                 android:gravity="center">
 
                 <ImageView
@@ -83,29 +106,32 @@
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:src="@drawable/bussiness" />
+
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/bussines"
+                    android:layout_marginBottom="5dp"
                     android:fontFamily="@font/roboto_meduim"
                     android:text="Business"
-                    android:layout_marginBottom="5dp"
-                    android:textColor="@color/black"
-                    android:layout_below="@id/bussines"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:textColor="@color/black" />
             </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
-            android:layout_height="150dp"
-            android:layout_width="150dp"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_margin="10dp"
+            android:layout_marginLeft="10dp"
             app:cardCornerRadius="15dp"
-            app:cardElevation="5dp"
-            android:layout_marginLeft="20dp"
-            android:layout_margin="10dp">
+            app:cardElevation="5dp">
+
             <RelativeLayout
                 android:id="@+id/sport_id"
-                android:background="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/white"
                 android:gravity="center">
 
                 <ImageView
@@ -113,28 +139,31 @@
                     android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:src="@drawable/sport" />
+
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sport"
                     android:fontFamily="@font/roboto_meduim"
                     android:text="Sport"
-                    android:textColor="@color/black"
-                    android:layout_below="@id/sport"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:textColor="@color/black" />
             </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
-            android:layout_height="150dp"
-            android:layout_width="150dp"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_margin="10dp"
+            android:layout_marginLeft="15dp"
             app:cardCornerRadius="15dp"
-            app:cardElevation="5dp"
-            android:layout_marginLeft="45dp"
-            android:layout_margin="10dp">
+            app:cardElevation="5dp">
+
             <RelativeLayout
-                android:background="@color/white"
-               android:id="@+id/health_id"
+                android:id="@+id/health_id"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/white"
                 android:gravity="center">
 
                 <ImageView
@@ -142,29 +171,32 @@
                     android:layout_width="50dp"
                     android:layout_height="60dp"
                     android:src="@drawable/health" />
+
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/health"
+                    android:layout_marginBottom="5dp"
                     android:fontFamily="@font/roboto_meduim"
                     android:text="Health"
-                    android:layout_marginBottom="5dp"
-                    android:textColor="@color/black"
-                    android:layout_below="@id/health"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:textColor="@color/black" />
             </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
-            android:layout_height="150dp"
-            android:layout_width="150dp"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_margin="10dp"
+            android:layout_marginLeft="10dp"
             app:cardCornerRadius="15dp"
-            app:cardElevation="5dp"
-            android:layout_marginLeft="20dp"
-            android:layout_margin="10dp">
+            app:cardElevation="5dp">
+
             <RelativeLayout
                 android:id="@+id/tech_id"
-                android:background="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/white"
                 android:gravity="center">
 
                 <ImageView
@@ -172,28 +204,31 @@
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:src="@drawable/tech" />
+
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tech"
                     android:fontFamily="@font/roboto_meduim"
                     android:text="Technology"
-                    android:textColor="@color/black"
-                    android:layout_below="@id/tech"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:textColor="@color/black" />
             </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
-            android:layout_height="150dp"
-            android:layout_width="150dp"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_margin="10dp"
+            android:layout_marginLeft="15dp"
             app:cardCornerRadius="15dp"
-            app:cardElevation="5dp"
-            android:layout_marginLeft="45dp"
-            android:layout_margin="10dp">
+            app:cardElevation="5dp">
+
             <RelativeLayout
-                android:background="@color/white"
                 android:id="@+id/science_id"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/white"
                 android:gravity="center">
 
                 <ImageView
@@ -201,29 +236,32 @@
                     android:layout_width="50dp"
                     android:layout_height="60dp"
                     android:src="@drawable/science1" />
+
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/science"
+                    android:layout_marginBottom="5dp"
                     android:fontFamily="@font/roboto_meduim"
                     android:text="Science"
-                    android:layout_marginBottom="5dp"
-                    android:textColor="@color/black"
-                    android:layout_below="@id/science"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:textColor="@color/black" />
             </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
-            android:layout_height="150dp"
-            android:layout_width="150dp"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_margin="10dp"
+            android:layout_marginLeft="10dp"
             app:cardCornerRadius="15dp"
-            app:cardElevation="5dp"
-            android:layout_marginLeft="20dp"
-            android:layout_margin="10dp">
+            app:cardElevation="5dp">
+
             <RelativeLayout
                 android:id="@+id/enter_id"
-                android:background="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/white"
                 android:gravity="center">
 
                 <ImageView
@@ -231,19 +269,21 @@
                     android:layout_width="85dp"
                     android:layout_height="wrap_content"
                     android:src="@drawable/enter" />
+
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/enter"
                     android:fontFamily="@font/roboto_meduim"
                     android:text="Entertainment"
-                    android:textColor="@color/black"
-                    android:layout_below="@id/enter"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:textColor="@color/black" />
             </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
 
 
     </GridLayout>
+
 
 </LinearLayout>
 

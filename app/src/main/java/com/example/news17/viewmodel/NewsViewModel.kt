@@ -3,6 +3,7 @@ package com.example.news17.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.news17.data.Article
 import com.example.news17.data.NewsResponse
 import com.example.news17.repository.NewsRepository
 import kotlinx.coroutines.Dispatchers
@@ -11,6 +12,9 @@ import kotlinx.coroutines.launch
 
 class NewsViewModel: ViewModel() {
      private val newsLiveData=MutableLiveData<NewsResponse>()
+     private val searchLiveData=MutableLiveData<List<Article>>()
+     val searchnew:LiveData<List<Article>>
+     get() = searchLiveData
      val news:LiveData<NewsResponse>
      get()=newsLiveData
 
@@ -70,6 +74,17 @@ class NewsViewModel: ViewModel() {
                 newsLiveData.postValue(result.body())
             }
         }
+    }
+    fun search(name:String){
+         GlobalScope.launch(Dispatchers.IO) {
+             val result=NewsRepository.getsearch(name)
+             if(result.isSuccessful){
+                 result.body().let {
+                      searchLiveData.postValue(it!!.articles)
+                 }
+
+             }
+         }
     }
 
 

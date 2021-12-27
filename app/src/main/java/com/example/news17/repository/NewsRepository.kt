@@ -10,4 +10,5 @@ object NewsRepository {
     suspend fun getMedical()=RetrofitHelper.api.getTopHeadlinesHealth()
     suspend fun getTechnology()=RetrofitHelper.api.getTopHeadlinesTechnology()
     suspend fun getScience()=RetrofitHelper.api.getTopHeadlinesScience()
+    suspend fun getsearch(name:String)=RetrofitHelper.api.searchNews(name)
 }
