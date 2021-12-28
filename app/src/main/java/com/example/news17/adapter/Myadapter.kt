@@ -61,7 +61,7 @@ class NewsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
              title.text=item.title
              source.text=item.source.name
          val dateTime: ZonedDateTime = ZonedDateTime.parse(item.publishedAt)
-         val res = dateTime.withZoneSameInstant(ZoneId.of("Asia/Kolkata")).format(DateTimeFormatter.ofPattern("yyyy-MM-dd | hh:mm a"))
+         val res = dateTime.withZoneSameInstant(ZoneId.of("Asia/Kolkata")).format(DateTimeFormatter.ofPattern( "hh:mm a | dd-MM-yyyy"))
          time.text=res
          Picasso.get().load(item.urlToImage).into(image)
      }

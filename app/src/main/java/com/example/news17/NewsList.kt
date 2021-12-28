@@ -18,11 +18,10 @@ class NewsList : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(activity_news_list)
-
         viewmodel = ViewModelProvider(this)[NewsViewModel::class.java]
         val bundle:Bundle?=intent.extras
-       val number=bundle!!.get("news")
-       when(number){
+        val number=bundle!!.get("news")
+        when(number){
            1->{viewmodel.getEverything()
                toolbar1.title = "Top-Feed"
            }
