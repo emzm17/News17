@@ -11,6 +11,7 @@ import com.example.news17.adapter.Myadapter
 import com.example.news17.data.Article
 import com.example.news17.data.NewsResponse
 import com.example.news17.viewmodel.NewsViewModel
+import com.example.news17.viewmodel.NewsViewModelFactory
 import kotlinx.android.synthetic.main.activity_news_list.*
 import kotlinx.android.synthetic.main.activity_news_list.toolbar1
 import kotlinx.android.synthetic.main.activity_search.*
@@ -28,7 +29,7 @@ class SearchActivity : AppCompatActivity() {
             setDisplayShowHomeEnabled(true)
 
         }
-        viewmodel = ViewModelProvider(this)[NewsViewModel::class.java]
+        viewmodel = ViewModelProvider(this, NewsViewModelFactory(this))[NewsViewModel::class.java]
         rcview_search.layoutManager=LinearLayoutManager(this)
         rcview_search.adapter=adapter
         search_view.isSubmitButtonEnabled=true

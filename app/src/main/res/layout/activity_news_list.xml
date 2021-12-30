@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue_50"
+
     tools:context=".NewsList">
 
 
@@ -22,12 +22,21 @@
         app:titleTextColor="@color/white"/>
  </com.google.android.material.appbar.AppBarLayout>
 
+<ProgressBar
+    android:id="@+id/pgbar"
+    android:layout_gravity="center"
+    android:visibility="visible"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+
     <androidx.recyclerview.widget.RecyclerView
 
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
         android:layout_below="@+id/toolbar1"
         tools:listitem="@layout/list_item"
         android:id="@+id/rcview"
+        android:visibility="invisible"
         android:layout_margin="5dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

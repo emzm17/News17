@@ -5,6 +5,7 @@ import com.example.news17.constants.Constant
 import com.example.news17.constants.Constant.Companion.API_KEY
 import com.example.news17.constants.Constant.Companion.today
 import com.example.news17.data.NewsResponse
+
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -17,7 +18,6 @@ interface NewsServices {
 
      @GET("v2/top-headlines?category=technology&country=in&apiKey=$API_KEY")
      suspend fun getTopHeadlinesTechnology():Response<NewsResponse>
-
 
 
      @GET("v2/top-headlines?category=sport&country=in&apiKey=$API_KEY")
