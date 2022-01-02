@@ -1,9 +1,8 @@
 package com.example.news17.api
 
-import com.example.news17.TodayDate
-import com.example.news17.constants.Constant
+
 import com.example.news17.constants.Constant.Companion.API_KEY
-import com.example.news17.constants.Constant.Companion.today
+
 import com.example.news17.data.NewsResponse
 
 import retrofit2.Response
