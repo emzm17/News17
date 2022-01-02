@@ -16,38 +16,8 @@ interface NewsServices {
      suspend fun getEverything():Response<NewsResponse>
 
 
-     @GET("v2/top-headlines?category=technology&country=in&apiKey=$API_KEY")
-     suspend fun getTopHeadlinesTechnology():Response<NewsResponse>
-
-
-     @GET("v2/top-headlines?category=sport&country=in&apiKey=$API_KEY")
-     suspend fun getTopHeadlinesSport():Response<NewsResponse>
-
-
-
-     @GET("v2/top-headlines?category=business&country=in&apiKey=$API_KEY")
-     suspend fun getTopHeadlinesBusiness():Response<NewsResponse>
-
-
-
-
-     @GET("v2/top-headlines?category=health&country=in&apiKey=$API_KEY")
-     suspend fun getTopHeadlinesHealth():Response<NewsResponse>
-
-
-
-
-
-     @GET("v2/top-headlines?category=science&country=in&apiKey=$API_KEY")
-     suspend fun getTopHeadlinesScience():Response<NewsResponse>
-
-
-
-
-     @GET("v2/top-headlines?category=entertainment&country=in&apiKey=$API_KEY")
-     suspend fun getTopHeadlinesEntertainment():Response<NewsResponse>
-
-
+     @GET("v2/top-headlines?country=in&apiKey=$API_KEY")
+     suspend fun getTopHeadlines(@Query("category")category:String):Response<NewsResponse>
 
 
      @GET("v2/everything?apiKey=$API_KEY&sortBy=popularity")

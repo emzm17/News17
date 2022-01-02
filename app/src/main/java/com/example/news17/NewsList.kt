@@ -28,22 +28,22 @@ class NewsList : AppCompatActivity() {
            1->{viewmodel.getEverthing()
                toolbar1.title = "Top-Feed"
            }
-            2->{viewmodel.getBusiness()
+            2->{viewmodel.getHeadlines("business")
                 toolbar1.title = "Business"
             }
-            3->{viewmodel.getSport()
+            3->{viewmodel.getHeadlines("sport")
                 toolbar1.title = "Sport"
             }
-            4->{viewmodel.getHealth()
+            4->{viewmodel.getHeadlines("health")
                 toolbar1.title = "Health"
             }
-            5->{viewmodel.getTechnology()
+            5->{viewmodel.getHeadlines("technology")
                 toolbar1.title = "Technology"
             }
-            6->{viewmodel.getScience()
+            6->{viewmodel.getHeadlines("science")
                 toolbar1.title = "Science"
             }
-            7->{viewmodel.getEntertainment()
+            7->{viewmodel.getHeadlines("entertainment")
                 toolbar1.title = "Entertainment"
             }
 

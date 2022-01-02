@@ -44,11 +44,13 @@ class NewsViewModel(private val context: Context) : ViewModel() {
         }
     }
 
-    fun getBusiness(){
+
+
+    fun getHeadlines(category:String){
         if(NetworkUitls.isInternetAvailable(context)) {
             try {
                 GlobalScope.launch(Dispatchers.IO) {
-                    val result = NewsRepository.getBusiness()
+                    val result = NewsRepository.getHeadlines(category)
                     if (result.code() == 200) {
                         newsLiveData.postValue(Response.Success(result.body()!!))
                     }
@@ -62,102 +64,6 @@ class NewsViewModel(private val context: Context) : ViewModel() {
             newsLiveData.postValue(Response.Error("Error Loading the Page"))
         }
     }
-
-    fun getSport(){
-        if(NetworkUitls.isInternetAvailable(context)) {
-            try {
-                GlobalScope.launch(Dispatchers.IO) {
-                    val result = NewsRepository.getSport()
-                    if (result.code() == 200) {
-                        newsLiveData.postValue(Response.Success(result.body()!!))
-                    }
-                }
-            } catch (e:Exception){
-                newsLiveData.postValue(Response.Error("Error Loading the Page"))
-            }
-
-        }
-        else{
-            newsLiveData.postValue(Response.Error("Error Loading the Page"))
-        }
-    }
-
-   fun getEntertainment(){
-        if(NetworkUitls.isInternetAvailable(context)) {
-            try {
-                GlobalScope.launch(Dispatchers.IO) {
-                    val result = NewsRepository.getEntertainment()
-                    if (result.code() == 200) {
-                        newsLiveData.postValue(Response.Success(result.body()!!))
-                    }
-                }
-            } catch (e:Exception){
-                newsLiveData.postValue(Response.Error("Error Loading the Page"))
-            }
-
-        }
-        else{
-            newsLiveData.postValue(Response.Error("Error Loading the Page"))
-        }
-    }
-
-    fun getHealth(){
-        if(NetworkUitls.isInternetAvailable(context)) {
-            try {
-                GlobalScope.launch(Dispatchers.IO) {
-                    val result = NewsRepository.getMedical()
-                    if (result.code() == 200) {
-                        newsLiveData.postValue(Response.Success(result.body()!!))
-                    }
-                }
-            } catch (e:Exception){
-                newsLiveData.postValue(Response.Error("Error Loading the Page"))
-            }
-
-        }
-        else{
-            newsLiveData.postValue(Response.Error("Error Loading the Page"))
-        }
-    }
-
-    fun getTechnology(){
-        if(NetworkUitls.isInternetAvailable(context)) {
-            try {
-                GlobalScope.launch(Dispatchers.IO) {
-                    val result = NewsRepository.getTechnology()
-                    if (result.code() == 200) {
-                        newsLiveData.postValue(Response.Success(result.body()!!))
-                    }
-                }
-            } catch (e:Exception){
-                newsLiveData.postValue(Response.Error("Error Loading the Page"))
-            }
-
-        }
-        else{
-            newsLiveData.postValue(Response.Error("Error Loading the Page"))
-        }
-    }
-
-    fun getScience(){
-        if(NetworkUitls.isInternetAvailable(context)) {
-            try {
-                GlobalScope.launch(Dispatchers.IO) {
-                    val result = NewsRepository.getScience()
-                    if (result.code() == 200) {
-                        newsLiveData.postValue(Response.Success(result.body()!!))
-                    }
-                }
-            } catch (e:Exception){
-                newsLiveData.postValue(Response.Error("Error Loading the Page"))
-            }
-
-        }
-        else{
-            newsLiveData.postValue(Response.Error("Error Loading the Page"))
-        }
-    }
-
 
 
     fun search(name:String){
