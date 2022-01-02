@@ -1,19 +1,16 @@
-package com.example.news17
+package com.example.news17.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.LinearLayout
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.news17.R
 import com.example.news17.adapter.Myadapter
 import com.example.news17.data.Article
-import com.example.news17.data.NewsResponse
 import com.example.news17.viewmodel.NewsViewModel
 import com.example.news17.viewmodel.NewsViewModelFactory
-import kotlinx.android.synthetic.main.activity_news_list.*
-import kotlinx.android.synthetic.main.activity_news_list.toolbar1
 import kotlinx.android.synthetic.main.activity_search.*
 
 class SearchActivity : AppCompatActivity() {

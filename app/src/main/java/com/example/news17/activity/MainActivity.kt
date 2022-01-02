@@ -1,26 +1,14 @@
-package com.example.news17
+package com.example.news17.activity
 
-import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Parcelable
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AlertDialog
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import com.example.news17.api.RetrofitHelper
-import com.example.news17.data.Article
-import com.example.news17.data.NewsResponse
+import com.example.news17.R
 import com.example.news17.utils.NetworkUitls
-import com.example.news17.viewmodel.NewsViewModel
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 
 class MainActivity : AppCompatActivity() {
@@ -81,8 +69,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-              R.id.search_nav->{
-                 startActivity(Intent(this,SearchActivity::class.java))
+              R.id.search_nav ->{
+                 startActivity(Intent(this, SearchActivity::class.java))
               }
         }
 
