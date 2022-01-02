@@ -10,6 +10,8 @@ The following libraries were used in this project:-
 -  [Custom Tab](https://developer.android.com/topic/libraries/architecture/viewmodel)
 -  [Coroutines](https://developer.android.com/kotlin/coroutines)
 -  [LottieFiles](https://lottiefiles.com/)
+-  [Picasso](https://github.com/square/picasso)
+
 
 
 # ScreenShot
