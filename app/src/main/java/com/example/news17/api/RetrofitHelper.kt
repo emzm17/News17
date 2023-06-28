@@ -1,7 +1,7 @@
 package com.example.news17.api
 
 
-import com.example.news17.constants.Constant.Companion.BASE_URL
+import com.example.news17.Constant.Companion.BASE_URL
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

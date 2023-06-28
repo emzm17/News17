@@ -27,7 +27,7 @@
             android:exported="false"
             android:parentActivityName=".activity.MainActivity" />
         <activity
-            android:name=".activity.NewsList"
+            android:name=".activity.NewsActivity"
             android:exported="false"
             android:parentActivityName=".activity.MainActivity" />
         <activity

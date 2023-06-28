@@ -14,7 +14,7 @@ import com.example.news17.viewmodel.NewsViewModel
 import com.example.news17.viewmodel.NewsViewModelFactory
 import kotlinx.android.synthetic.main.activity_news_list.*
 
-class NewsList : AppCompatActivity() {
+class NewsActivity : AppCompatActivity() {
     private lateinit var viewmodel:NewsViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

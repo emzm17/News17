@@ -1,7 +1,8 @@
 package com.example.news17.api
 
 
-import com.example.news17.constants.Constant.Companion.API_KEY
+import com.example.news17.Constant.Companion.API_KEY
+
 
 import com.example.news17.data.NewsResponse
 

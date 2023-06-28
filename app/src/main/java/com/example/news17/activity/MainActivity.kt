@@ -19,37 +19,37 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         if(NetworkUitls.isInternetAvailable(this)) {
             top_feed_id.setOnClickListener {
-                val intent = Intent(this, NewsList::class.java)
+                val intent = Intent(this, NewsActivity::class.java)
                 intent.putExtra("news", 1)
                 startActivity(intent)
             }
             bussines_id.setOnClickListener {
-                val intent = Intent(this, NewsList::class.java)
+                val intent = Intent(this, NewsActivity::class.java)
                 intent.putExtra("news", 2)
                 startActivity(intent)
             }
             sport_id.setOnClickListener {
-                val intent = Intent(this, NewsList::class.java)
+                val intent = Intent(this, NewsActivity::class.java)
                 intent.putExtra("news", 3)
                 startActivity(intent)
             }
             health_id.setOnClickListener {
-                val intent = Intent(this, NewsList::class.java)
+                val intent = Intent(this, NewsActivity::class.java)
                 intent.putExtra("news", 4)
                 startActivity(intent)
             }
             tech_id.setOnClickListener {
-                val intent = Intent(this, NewsList::class.java)
+                val intent = Intent(this, NewsActivity::class.java)
                 intent.putExtra("news", 5)
                 startActivity(intent)
             }
             science_id.setOnClickListener {
-                val intent = Intent(this, NewsList::class.java)
+                val intent = Intent(this, NewsActivity::class.java)
                 intent.putExtra("news", 6)
                 startActivity(intent)
             }
             enter_id.setOnClickListener {
-                val intent = Intent(this, NewsList::class.java)
+                val intent = Intent(this, NewsActivity::class.java)
                 intent.putExtra("news", 7)
                 startActivity(intent)
             }
